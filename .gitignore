@@ -1,0 +1,8 @@
+# Velká videa
+/videos/
+
+# Původní fotografie
+/photos/
+
+# Nastavení VS Code
+/.vscode/
