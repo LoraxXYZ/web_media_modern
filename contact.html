@@ -25,13 +25,26 @@
     </nav>
         </header>
 
+        <main class="page-content contact-page">
+
+    <div class="contact-intro">
+        <p class="contact-kicker">KONTAKTUJ MĚ</p>
+
+        <h2>Napiš mi zprávu</h2>
+
+        <p>
+            Máš dotaz ohledně mých LEGO a COBI animací,
+            fotografií nebo další tvorby?
+            Neváhej mě kontaktovat prostřednictvím formuláře.
+        </p>
+    </div>
    
   <form id="contactForm">
   <label for="name">Jméno:</label>
-  <input type="text" id="name" name="name">
+  <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
 
   <label for="email">Email:</label>
-  <input type="email" id="email" name="email">
+  <input type="email" id="email" name="email" required autocomplete="email">
 
   <label for="tema">Téma zprávy:</label>
   <select id="tema" name="tema">
@@ -46,10 +59,12 @@
   <input type="tel" id="phone" name="phone">
 
   <label for="message">Zpráva:</label>
-  <textarea id="message" name="message"></textarea>
+  <textarea id="message" name="message" required minlength="10"></textarea>
 
   <button type="submit">Odeslat</button>
 </form>
+
+</main>
 
  <footer>
     <ol>
@@ -64,6 +79,15 @@
 </footer>
 
 <p>© 2026 Lorax XYZ</p>
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Formulář je zatím ukázkový. Zpráva nebyla odeslána.");
+});
+</script>
+
 
 </body>
 

@@ -180,3 +180,709 @@ body.modern-home {
         justify-content: center;
     }
 }
+
+/* MODERNI NAVIGACE WEBU */
+
+header {
+    background: #101827;
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 0;
+}
+
+header nav a {
+    display: inline-block;
+    margin: 0;
+    padding: 12px 16px;
+    background: #263750;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+header nav a:hover {
+    background: #d5a638;
+    color: #111827;
+}
+
+header nav a:focus-visible {
+    outline: 3px solid #ffcc55;
+    outline-offset: 3px;
+}
+
+/* NAVIGACE NA MOBILU */
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    header nav {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    header nav a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+/* VZHLED OSTATNICH STRANEK */
+
+body:not(.modern-home) {
+    margin: 0;
+    background: #0b1220;
+    color: #f5f7ff;
+    font-family: Arial, sans-serif;
+}
+
+/* Spolecny obsah stranek */
+
+.page-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    box-sizing: border-box;
+}
+
+/* Nadpisy a text */
+
+.page-content h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    color: #ffcc55;
+}
+
+.page-content p {
+    color: #c5d0df;
+    line-height: 1.7;
+}
+
+/* Responzivni videa */
+
+.page-content video {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    border-radius: 14px;
+    background: #000;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 700px) {
+    .page-content {
+        padding: 25px 16px;
+    }
+}
+
+
+/* MODERNI GALERIE VIDEI */
+
+.videos-intro {
+    margin-bottom: 30px;
+}
+
+.videos-label {
+    color: #ffcc55;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.videos-intro h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    color: white;
+    margin: 12px 0;
+}
+
+.videos-intro p {
+    color: #c5d0df;
+    line-height: 1.7;
+}
+
+/* Responzivni mrizka */
+
+.video-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 24px;
+}
+
+/* Jednotlive karty */
+
+.video-card {
+    background: #172438;
+    border: 1px solid #293b55;
+    border-radius: 16px;
+    padding: 16px;
+    min-width: 0;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.video-card:hover {
+    transform: translateY(-3px);
+    border-color: #ffcc55;
+}
+
+.video-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 0 15px;
+}
+
+/* Video uvnitr karty */
+
+.page-content .video-card video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #000;
+    margin: 0;
+}
+
+/* Mensi obrazovky */
+
+@media (max-width: 700px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .video-card {
+        padding: 12px;
+    }
+
+    .video-card h3 {
+        font-size: 17px;
+    }
+}
+
+
+/* MODERNÍ FOTOGALERIE */
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+/* Nadpisy a popisky sekcí */
+
+.photo-gallery > h2,
+.photo-gallery > h3,
+.photo-gallery > p {
+    grid-column: 1 / -1;
+}
+
+.photo-gallery > h2 {
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 42px);
+    margin: 0;
+}
+
+.photo-gallery > h3 {
+    color: #ffcc55;
+    font-size: 22px;
+    margin: 25px 0 0;
+}
+
+.photo-gallery > p {
+    color: #c5d0df;
+    line-height: 1.7;
+}
+
+/* Fotografie */
+
+.photo-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/* Karty fotografií */
+
+.photo-gallery > img,
+.photo-gallery > a,
+.photo-gallery > figure {
+    min-width: 0;
+    margin: 0;
+    padding: 10px;
+    background: #172438;
+    border: 1px solid #293b55;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+/* Klikatelné fotografie */
+
+.photo-gallery > a {
+    display: block;
+    text-decoration: none;
+}
+
+.photo-gallery > a:hover,
+.photo-gallery > figure:hover {
+    border-color: #ffcc55;
+}
+
+/* Popisky fotografií */
+
+.photo-gallery figcaption {
+    padding: 12px 5px 4px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+/* MOBILNÍ ZOBRAZENÍ */
+
+@media (max-width: 700px) {
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .photo-gallery > h2 {
+        font-size: 28px;
+    }
+
+    .photo-gallery > h3 {
+        font-size: 20px;
+    }
+}
+
+
+/* ZVĚTŠOVÁNÍ FOTOGRAFIÍ */
+
+.photo-gallery img {
+    cursor: zoom-in;
+}
+
+.photo-lightbox {
+    background: #0b1220;
+    border: 1px solid #293b55;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 95vw;
+    max-height: 95vh;
+    color: white;
+}
+
+.photo-lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.photo-lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#close-lightbox {
+    display: block;
+    margin: 0 0 12px auto;
+    padding: 8px 13px;
+    background: #293b55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+/* MODERNÍ KONTAKTNÍ STRÁNKA */
+
+.contact-page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 50px 24px;
+    box-sizing: border-box;
+}
+
+.contact-intro {
+    margin-bottom: 30px;
+}
+
+.contact-kicker {
+    color: #ffcc55;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contact-intro h2 {
+    color: white;
+    font-size: clamp(28px, 4vw, 42px);
+    margin: 12px 0;
+}
+
+.contact-intro p {
+    color: #c5d0df;
+    line-height: 1.7;
+}
+
+/* KONTAKTNÍ FORMULÁŘ */
+
+#contactForm {
+    background: #172438;
+    border: 1px solid #293b55;
+    border-radius: 18px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#contactForm label {
+    display: block;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px;
+    background: #0b1220;
+    color: white;
+
+    border: 1px solid #40516c;
+    border-radius: 10px;
+    font: inherit;
+}
+
+#contactForm textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contactForm input:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
+    outline: 2px solid #ffcc55;
+    outline-offset: 2px;
+}
+
+/* TLAČÍTKO */
+
+#contactForm button {
+    padding: 14px 24px;
+    background: #ffcc55;
+    color: #111827;
+
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#contactForm button:hover {
+    background: #f5b938;
+}
+
+/* MOBILNÍ ZOBRAZENÍ */
+
+@media (max-width: 700px) {
+    .contact-page {
+        padding: 25px 16px;
+    }
+
+    #contactForm {
+        padding: 20px;
+    }
+}
+
+
+/* SJEDNOCENÍ ŠÍŘKY KONTAKTNÍCH POLÍ */
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm input[type="tel"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* MODERNÍ STRÁNKA MOJE ODKAZY */
+
+.links-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 24px;
+    box-sizing: border-box;
+}
+
+.links-page h1 {
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 15px;
+}
+
+.links-intro {
+    color: #c5d0df;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* ROZLOŽENÍ KARET */
+
+.links-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 22px;
+}
+
+/* JEDNOTLIVÉ KARTY */
+
+.link-card {
+    background: #172438;
+    border: 1px solid #293b55;
+    border-radius: 16px;
+    padding: 25px;
+    min-width: 0;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffcc55;
+}
+
+.link-card p {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    overflow-wrap: anywhere;
+}
+
+/* KLIKATELNÉ ODKAZY */
+
+.link-card a {
+    display: inline-block;
+    background: #ffcc55;
+    color: #111827;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.link-card a:hover {
+    background: #f5b938;
+}
+
+.link-card a:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+/* MOBILNÍ VERZE */
+
+@media (max-width: 700px) {
+    .links-page {
+        padding: 25px 16px;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .link-card {
+        padding: 20px;
+    }
+}
+
+
+/* MODERNÍ YOUTUBE GALERIE */
+
+.youtube-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 24px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 250px), 1fr)
+    );
+    gap: 18px;
+}
+
+/* NADPIS A ÚVOD */
+
+.youtube-page > h1,
+.youtube-page > h2,
+.youtube-intro {
+    grid-column: 1 / -1;
+}
+
+.youtube-page h1 {
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 42px);
+    margin: 0;
+}
+
+.youtube-page h2 {
+    color: #ffcc55;
+    margin-top: 35px;
+}
+
+.youtube-intro {
+    color: #c5d0df;
+    line-height: 1.7;
+    margin: 0 0 15px;
+}
+
+/* SKRYTÍ OPAKOVANÝCH INSTRUKCÍ */
+
+.youtube-page > p:not(.youtube-intro) {
+    display: none;
+}
+
+/* KARTY S YOUTUBE ODKAZY */
+
+.youtube-page > a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 0;
+    min-height: 90px;
+    padding: 20px;
+
+    background: #172438;
+    border: 1px solid #293b55;
+    border-radius: 16px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+
+    transition: transform 0.2s,
+                border-color 0.2s;
+}
+
+/* IKONA PŘEHRÁVÁNÍ */
+
+.youtube-page > a::before {
+    content: "▶";
+    flex-shrink: 0;
+    color: #ffcc55;
+    font-size: 24px;
+}
+
+.youtube-page > a:hover {
+    transform: translateY(-4px);
+    border-color: #ffcc55;
+}
+
+.youtube-page > a:focus-visible {
+    outline: 3px solid #ffcc55;
+    outline-offset: 3px;
+}
+
+/* TABULKA ANIMACÍ */
+
+.youtube-table-scroll {
+    grid-column: 1 / -1;
+    min-width: 0;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 14px;
+}
+
+.youtube-page table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    background: #172438;
+    color: #ffffff;
+}
+
+.youtube-page th,
+.youtube-page td {
+    border: 1px solid #40516c !important;
+    padding: 12px !important;
+    text-align: left;
+}
+
+.youtube-page th {
+    background: #263750;
+    color: #ffcc55;
+}
+
+.youtube-page tr:nth-child(even) td {
+    background: #1e2d43;
+}
+
+/* MOBILNÍ ZOBRAZENÍ */
+
+@media (max-width: 700px) {
+    .youtube-page {
+        grid-template-columns: 1fr;
+        padding: 25px 16px;
+        gap: 15px;
+    }
+
+    .youtube-page > a {
+        padding: 16px;
+        min-height: 75px;
+    }
+}
